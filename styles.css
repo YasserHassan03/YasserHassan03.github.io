@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #333;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #333;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00ffcc;
+}
+
+nav a.active {
+    color: #00ffcc;
+}
+
+main {
+    margin-top: 4rem; /* Space for fixed navbar */
+    padding: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    nav {
+        padding: 1rem;
+    }
+
+    nav a {
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+}
