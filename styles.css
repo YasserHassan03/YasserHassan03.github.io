@@ -34,6 +34,34 @@ nav a:hover {
 nav a.active {
     color: #00ffcc;
 }
+.profile-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-image {
+    width: 300px;  /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.linkedin-image{
+    width: 50px;  /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.profile-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+}
 
 main {
     margin-top: 4rem; /* Space for fixed navbar */
