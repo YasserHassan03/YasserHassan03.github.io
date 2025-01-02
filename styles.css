@@ -62,6 +62,17 @@ nav a.active {
     line-height: 1.6;
     color: white;
 }
+.raisedbox { 
+    margin: 5vw;
+    padding: 1vw;
+    border: 1px solid #77aaff;
+    box-shadow:  -1px 1px #77aaff,
+         -2px 2px #77aaff,
+         -3px 3px #77aaff,
+         -4px 4px #77aaff,
+         -5px 5px #77aaff;
+    color: white;
+}
 
 main {
     margin-top: 4rem; /* Space for fixed navbar */
