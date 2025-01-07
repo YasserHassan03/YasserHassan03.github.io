@@ -1,20 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Portfolio Website</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <nav>
-      <a href="./index.html">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./jobs.html">Professional Experience</a>
-      <a href="./projects.html">Projects</a>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./jobs.html">Professional Experience</a>
+        <a href="./projects.html">Projects</a>
     </nav>
+    <main class="projects-container">
+        <div class="page-title">
+            <h1>My Projects</h1>
+            <p>A collection of my key projects and technical work</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Idough</h2>
+                    <p class="project-description">
+                        Built a IoT product prototype that monitors bread proofing, providing real-time analytics and
+                        email notifications when proofing is optimal.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/idough" class="project-link github-link">GitHub</a>
+                        <a href="https://www.youtube.com/watch?v=DBGVzb12fd0" class="project-link demo-link" target="_blank">Video Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Bus Ranking Application</h2>
+                    <p class="project-description">
+                        I worked on using FPGAs to make a stabiliser for buses which would then rank the drivers
+                        based on the comfort of their journey, giving them a score before then displaying it on a flask
+                        website
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">FPGA</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/busRankingApp"
+                            class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">AI-Driven Pet Care System</h2>
+                    <p class="project-description">
+                        Led IBM consultancy project to design an AI-powered companion pet for elderly care.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">IBM Watson</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/MartinNguyen03/IBM-AI-Pet"
+                            class="project-link github-link">GitHub</a>
+                        <a href="https://youtube.com/shorts/rjBK7FnY478?feature=share" class="project-link demo-link" target="_blank">Video Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">C Compiler</h2>
+                    <p class="project-description">
+                        Built a full-function C compiler using C++ in a team of two, the project finished 5th in a year
+                        group-wide competition.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/C-compiler"
+                            class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">RISCV-CPU</h2>
+                    <p class="project-description">
+                        Collaborated on designing and implementing a RISC-V processor using SystemVerilog my main focus
+                        was on pipeline efficiency and handling instructions for optimized performance.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/RISCV-CPU"
+                            class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Music Synthesiser</h2>
+                    <p class="project-description">
+                        Designed and developed a custom music synthesizer that enables users to create and manipulate
+                        sounds through intuitive controls.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">UI Design</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/musicsynthesiser"
+                            class="project-link github-link">GitHub</a>
+                        <a href="https://youtube.com/shorts/hw59ErwE8ts?feature=share" class="project-link demo-link" target="_blank">Video Demo</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Robotic Manipulation</h2>
+                    <p class="project-description">
+                        Programmed a robotic arm to manipulate puzzle blocks, draw shapes, and play musical instruments.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Matlab</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/J3T21/Robotic_manipulation"
+                            class="project-link github-link">GitHub</a>
+                        <a href="https://www.youtube.com/watch?v=I83gERjzZAg" class="project-link demo-link" target="_blank">Video Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Cricket Game Predictor</h2>
+                    <p class="project-description">
+                        Machine Learning model to predict the score of a cricket game
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Data Modelling</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/hawkeye-cricket-predictor"
+                            class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Smart HR Contract </h2>
+                    <p class="project-description">
+                        Smart HR Contract built on the Ethereum blockchain to automate HR processes.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">BlockChain</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/YasserHassan03/Solidity-Smart-Contract/tree/main"
+                            class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
     <script src="script.js"></script>
-  </body>
+</body>
 
 </html>
