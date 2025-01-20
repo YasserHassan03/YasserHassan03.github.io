@@ -1,19 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Portfolio Website</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasser Hassan Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background-color: #0a0a0a;
+            color: white;
+        }
+
+        nav {
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            text-align: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ffcc;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: #0a0a0a;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
+            opacity: 0.7;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .primary-btn {
+            background-color: #00ffcc;
+            color: #000;
+        }
+
+        .secondary-btn {
+            background-color: #333;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .quick-links {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00ffcc;
+            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.1);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #00ffcc;
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card-link {
+            color: #00ffcc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .card-link:hover {
+            gap: 1rem;
+        }
+
+        .skills {
+            background-color: #1a1a1a;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background-color: #333;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            border-color: #00ffcc;
+            box-shadow: 0 4px 15px rgba(0, 255, 204, 0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #00ffcc;
+            font-size: 2rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-links {
+                flex-direction: column;
+            }
+            
+            .card {
+                text-align: center;
+            }
+            
+            .card-link {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                margin-right: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills h2 {
+                font-size: 2rem;
+            }
+
+            .skill-tag {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <nav>
-      <a href="./index.html">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./jobs.html">Professional Experience</a>
-      <a href="./projects.html">Projects</a>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./jobs.html">Professional Experience</a>
+        <a href="./projects.html">Projects</a>
     </nav>
-    <script src="script.js"></script>
-  </body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Yasser Hassan</h1>
+            <p class="subtitle fade-in">Electronic & Information Engineering Student at Imperial College London</p>
+            <div class="hero-links fade-in">
+                <a href="./about.html" class="btn primary-btn">
+                    <i class="fas fa-user"></i>
+                    About Me
+                </a>
+                <a href="https://github.com/YasserHassan03" target="_blank" class="btn secondary-btn">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="quick-links">
+        <div class="card">
+            <i class="fas fa-code"></i>
+            <h2>Projects</h2>
+            <p>Explore my technical projects including IoT solutions, AI applications, and full-stack development work.</p>
+            <a href="./projects.html" class="card-link">
+                View Projects
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-briefcase"></i>
+            <h2>Experience</h2>
+            <p>Discover my professional journey through internships at Nexcom A/S, Phlex, and leadership roles.</p>
+            <a href="./jobs.html" class="card-link">
+                View Experience
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-user-graduate"></i>
+            <h2>About</h2>
+            <p>Learn about my journey from Egypt to the UK, my passion for technology, and achievements in swimming.</p>
+            <a href="./about" class="card-link">
+                Read More
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>Technical Expertise</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">IoT</span>
+            <span class="skill-tag">Matlab</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Block Chain</span>
+            <span class="skill-tag">Web Development</span>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            setTimeout(() => {
+                fadeElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    }, index * 200);
+                });
+            }, 500);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
